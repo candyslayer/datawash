@@ -1,0 +1,29 @@
+dataset_version: "1.0.0"
+input_dir: "data/datasets/text-only"
+output_dir: "data/training/text-only"
+sft_dir: "data/training/text-only/sft"
+
+tasks:
+  - "answer"
+  - "explanation"
+
+prompts:
+  answer_system: "你是一名专业的中国公务员行测考试辅导老师。请认真分析题目，选择正确答案。"
+  explanation_system: "你是一名专业的中国公务员行测考试辅导老师。请给出正确答案，并依据题目解析清晰说明解题过程。"
+
+split:
+  ratios:
+    train: 0.8
+    validation: 0.1
+    test: 0.1
+  seed: 20261126
+  group_by: "paper_and_material_and_duplicates"
+
+quality:
+  include_metadata: true
+  allow_missing_explanation_in_answer: true
+  min_explanation_length: 5
+  invalid_explanation_patterns:
+    - "^略[。.]?$"
+    - "^暂无解析[。.]?$"
+    - "^无[。.]?$"

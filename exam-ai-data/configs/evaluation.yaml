@@ -1,0 +1,8 @@
+dataset_version: "baseline-v1"
+input_dir: "data/datasets/text-only"
+training_manifest: "data/training/text-only/source_manifest.json"
+duplicate_report: "reports/duplicate_questions.csv"
+output_root: "data/evaluation/text-only"
+target_size: 2000
+seed: 20261126
+exclude_duplicate_overlapping_papers: true

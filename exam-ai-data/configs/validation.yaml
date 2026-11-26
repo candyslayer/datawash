@@ -1,0 +1,4 @@
+strict_schema: true
+min_stem_length: 4
+require_answer_in_options: true
+allow_missing_explanation: true

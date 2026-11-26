@@ -1,0 +1,34 @@
+{
+  "name": "exam-ai-data",
+  "version": "1.0.0",
+  "description": "Civil Service Exam (行测) Markdown & Image Data Parsing, Cleaning, and Standardization Pipeline",
+  "type": "module",
+  "main": "src/cli/index.js",
+  "scripts": {
+    "cli": "node src/cli/index.js",
+    "scan": "node src/cli/index.js scan",
+    "analyze": "node src/cli/index.js analyze",
+    "parse": "node src/cli/index.js parse",
+    "images": "node src/cli/index.js images",
+    "normalize": "node src/cli/index.js normalize",
+    "deduplicate": "node src/cli/index.js deduplicate",
+    "validate": "node src/cli/index.js validate",
+    "pipeline": "node src/cli/index.js pipeline",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "commander": "^12.1.0",
+    "js-yaml": "^4.1.0",
+    "p-limit": "^6.1.0",
+    "pino": "^9.5.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.5"
+  }
+}

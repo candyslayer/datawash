@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Question",
+  "type": "object",
+  "required": [
+    "question_id",
+    "source_qid",
+    "paper_id",
+    "year",
+    "exam_type",
+    "module",
+    "question_number",
+    "question_type",
+    "stem",
+    "options",
+    "official_answer",
+    "official_explanation",
+    "material_id",
+    "image_refs",
+    "source",
+    "quality"
+  ],
+  "properties": {
+    "question_id": { "type": "string", "minLength": 1 },
+    "source_qid": { "type": ["string", "null"] },
+    "paper_id": { "type": "string", "minLength": 1 },
+    "year": { "type": ["integer", "null"] },
+    "exam_type": { "type": "string", "enum": ["national", "provincial", "municipal", "unknown"] },
+    "province": { "type": ["string", "null"] },
+    "module": {
+      "type": "string",
+      "enum": [
+        "political_theory",
+        "general_knowledge",
+        "verbal_comprehension",
+        "quantitative_reasoning",
+        "logical_reasoning",
+        "data_analysis"
+      ]
+    },
+    "question_number": { "type": ["integer", "null"] },
+    "question_type": { "type": "string", "minLength": 1 },
+    "stem": { "type": "string" },
+    "options": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "official_answer": { "type": ["string", "null"] },
+    "official_explanation": { "type": ["string", "null"] },
+    "material_id": { "type": ["string", "null"] },
+    "image_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source": {
+      "type": "object",
+      "required": ["file", "anchor"],
+      "properties": {
+        "file": { "type": "string", "minLength": 1 },
+        "anchor": { "type": "string", "minLength": 1 }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "required": ["parse_status", "validation_status", "answer_status"],
+      "properties": {
+        "parse_status": { "type": "string", "enum": ["success", "partial", "failed"] },
+        "validation_status": { "type": "string", "enum": ["pending", "PASS", "REVIEW", "REJECT"] },
+        "answer_status": { "type": "string", "enum": ["unverified", "missing", "present"] }
+      }
+    }
+  },
+  "additionalProperties": true
+}

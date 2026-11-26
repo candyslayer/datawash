@@ -1,0 +1,11 @@
+parser_version: "1.0.0"
+preserve_html_images: true
+extract_sub_qid: true
+option_markers:
+  correct_emoji: "✅"
+missing_answer_tokens:
+  - "（缺）"
+  - "(缺)"
+  - "缺"
+  - "暂无"
+  - ""

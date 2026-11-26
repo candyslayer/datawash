@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Material",
+  "type": "object",
+  "required": ["material_id", "paper_id", "module", "content", "images", "source_file", "source_anchor"],
+  "properties": {
+    "material_id": { "type": "string", "minLength": 1 },
+    "paper_id": { "type": "string", "minLength": 1 },
+    "module": {
+      "type": "string",
+      "enum": [
+        "political_theory",
+        "general_knowledge",
+        "verbal_comprehension",
+        "quantitative_reasoning",
+        "logical_reasoning",
+        "data_analysis"
+      ]
+    },
+    "content": { "type": "string" },
+    "raw_content": { "type": "string" },
+    "images": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_file": { "type": "string", "minLength": 1 },
+    "source_anchor": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": true
+}

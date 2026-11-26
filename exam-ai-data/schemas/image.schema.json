@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Image",
+  "type": "object",
+  "required": [
+    "image_id",
+    "original_path",
+    "normalized_path",
+    "image_type",
+    "related_question_ids",
+    "related_material_ids",
+    "file_hash",
+    "exists",
+    "mime_type"
+  ],
+  "properties": {
+    "image_id": { "type": "string", "minLength": 1 },
+    "original_path": { "type": "string", "minLength": 1 },
+    "normalized_path": { "type": ["string", "null"] },
+    "image_type": {
+      "type": "string",
+      "enum": [
+        "question_image",
+        "option_image",
+        "material_image",
+        "formula_image",
+        "chart_image",
+        "unknown"
+      ]
+    },
+    "related_question_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "related_material_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "file_hash": { "type": ["string", "null"] },
+    "exists": { "type": "boolean" },
+    "mime_type": { "type": ["string", "null"] },
+    "width": { "type": ["integer", "null"] },
+    "height": { "type": ["integer", "null"] }
+  },
+  "additionalProperties": true
+}

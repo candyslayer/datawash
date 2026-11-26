@@ -1,0 +1,4 @@
+ngram_size: 4
+min_similarity: 0.85
+bucket_prefix_length: 8
+max_bucket_size: 200

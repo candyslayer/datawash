@@ -1,0 +1,22 @@
+classification_version: "1.0.0"
+input_dir: "data/normalized"
+output_dir: "data/datasets"
+text_only_dir: "data/datasets/text-only"
+multimodal_dir: "data/datasets/multimodal"
+review_dir: "data/datasets/review"
+
+rules:
+  graphical_question_types:
+    - "图形推理"
+  require_non_empty_stem: true
+  require_non_empty_options: true
+  require_valid_answer: true
+  reject_masked_stem: true
+  allow_formula_images_in_text_only: false
+  allow_material_images_in_text_only: false
+  allow_option_images_in_text_only: false
+  allow_question_images_in_text_only: false
+
+duplicate_policy:
+  keep_in_dataset: true
+  group_in_same_split: true

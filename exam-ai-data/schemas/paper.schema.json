@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Paper",
+  "type": "object",
+  "required": ["paper_id", "year", "exam_type", "paper_name", "source_file", "modules"],
+  "properties": {
+    "paper_id": { "type": "string", "minLength": 1 },
+    "year": { "type": ["integer", "null"] },
+    "exam_type": { "type": "string", "enum": ["national", "provincial", "municipal", "unknown"] },
+    "province": { "type": ["string", "null"] },
+    "paper_name": { "type": "string", "minLength": 1 },
+    "source_file": { "type": "string", "minLength": 1 },
+    "source_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "political_theory",
+          "general_knowledge",
+          "verbal_comprehension",
+          "quantitative_reasoning",
+          "logical_reasoning",
+          "data_analysis"
+        ]
+      }
+    },
+    "source_metadata": { "type": "object" }
+  },
+  "additionalProperties": true
+}

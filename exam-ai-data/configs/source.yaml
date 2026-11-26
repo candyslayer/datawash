@@ -1,0 +1,21 @@
+default_source: "D:/java/data/xingcezhenti-main"
+ignore_files:
+  - "README.md"
+  - "蒸馏方法参考.md"
+  - "图片缺失清单.txt"
+module_dirs:
+  "01-政治理论": "political_theory"
+  "02-常识判断": "general_knowledge"
+  "03-言语理解与表达": "verbal_comprehension"
+  "04-数量关系": "quantitative_reasoning"
+  "05-判断推理": "logical_reasoning"
+  "06-资料分析": "data_analysis"
+image_dir: "90-图片"
+supported_image_extensions:
+  - ".png"
+  - ".jpg"
+  - ".jpeg"
+  - ".webp"
+  - ".gif"
+  - ".svg"
+  - ".jfif"
